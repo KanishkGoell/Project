@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Rounded corners for ShapeableImageView -->
+    <style name="rounded8">
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <!-- Simple app theme (Material‑3, no action bar) -->
+    <style name="Theme.OCR" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/color_green</item>
+        <item name="colorSecondary">@color/color_green</item>
+    </style>
+
+</resources>

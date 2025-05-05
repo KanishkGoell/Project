@@ -1,0 +1,11 @@
+<!-- res/values/dimens.xml -->
+<resources>
+    <!-- Should match your CardView cornerRadius (8dp) -->
+    <dimen name="card_corner_radius">8dp</dimen>
+
+    <!-- Width of the border stroke on the swipe background -->
+    <dimen name="stroke_width">2dp</dimen>
+
+    <!-- How much the red background extends past the card edge -->
+    <dimen name="swipe_offset">16dp</dimen>
+</resources>
