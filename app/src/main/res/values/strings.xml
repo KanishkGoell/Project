@@ -65,6 +65,8 @@
     <string name="no_documents">No documents</string>
     <string name="no_receipts">No receipts</string>
     <string name="no_receipts_yet">No receipts yet</string>
+    <string name="merchant_name">Merchant</string>
+
 
 
 </resources>

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Toolbar with the same green background & dark‐action‐bar overlay -->
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/color_green"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -17,23 +17,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Rounded‐corner image view identical to DocumentViewer -->
+    <!-- Merchant name input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/merchantInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/merchant_name"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etMerchantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Receipt image: now placed below merchantInputLayout -->
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivReceipt"
         android:layout_width="0dp"
         android:layout_height="160dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/rounded8"
         app:strokeColor="@color/color_green"
         app:strokeWidth="1dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/merchantInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- RecyclerView for your rows -->
+    <!-- Table list -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTable"
         android:layout_width="0dp"
@@ -43,9 +62,9 @@
         app:layout_constraintTop_toBottomOf="@id/ivReceipt"
         app:layout_constraintBottom_toTopOf="@id/buttonLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Bottom button bar, just like DocumentViewerActivity -->
+    <!-- Bottom buttons -->
     <LinearLayout
         android:id="@+id/buttonLayout"
         android:layout_width="0dp"
@@ -68,7 +87,7 @@
             android:backgroundTint="@color/color_green"
             android:text="@string/save"
             android:textColor="@android:color/white"
-            app:icon="@drawable/ic_save" />
+            app:icon="@drawable/ic_save"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnExportCsv"
@@ -80,7 +99,7 @@
             android:backgroundTint="@color/color_green"
             android:text="@string/export_csv"
             android:textColor="@android:color/white"
-            app:icon="@drawable/ic_csv" />
+            app:icon="@drawable/ic_csv"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

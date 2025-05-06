@@ -62,7 +62,9 @@ class ReceiptViewerActivity : AppCompatActivity() {
             isNewReceipt = it.getBooleanExtra(EXTRA_IS_NEW_RECEIPT, false)
             imagePath = it.getStringExtra(EXTRA_IMAGE_PATH)
             merchantName = it.getStringExtra(EXTRA_MERCHANT_NAME) ?: "Unknown Merchant"
-
+            // inside processIntent():
+            merchantName = it.getStringExtra(EXTRA_MERCHANT_NAME) ?: "Unknown Merchant"
+            binding.etMerchantName.setText(merchantName)
             @Suppress("UNCHECKED_CAST")
             val extractedRows = it.getSerializableExtra(EXTRA_TABLE) as? ArrayList<ReceiptRow>
             if (extractedRows != null) {
@@ -93,11 +95,12 @@ class ReceiptViewerActivity : AppCompatActivity() {
 
     private fun setupViews() {
         binding.toolbar.title = if (isNewReceipt) {
-            merchantName
+            getString(R.string.receipt_viewer)
         } else {
-            currentReceipt?.merchantName ?: "Receipt Viewer"
+            binding.etMerchantName.text.toString().ifBlank { "Receipt Viewer" }
         }
     }
+
 
     private fun setupListeners() {
         binding.btnSave.setOnClickListener {
@@ -173,7 +176,7 @@ class ReceiptViewerActivity : AppCompatActivity() {
                 updatedAt = Date(),
                 order = currentReceipt?.order ?: 0,
                 totalAmount = totalAmount,
-                merchantName = merchantName
+                merchantName = binding.etMerchantName.text.toString().trim(),
             )
 
             // ─────────────────────── 4. Save or update ──────────────────────────
