@@ -14,6 +14,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <!-- res/layout/activity_scan.xml – inside your root ConstraintLayout -->
+
+
 
     <View
         android:id="@+id/scanOverlay"
@@ -88,5 +91,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:tint="@android:color/white" />
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleMode"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        app:singleSelection="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Text"
+            android:checked="true"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMath"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Math"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReceipt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Receipt"/>
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

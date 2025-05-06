@@ -23,7 +23,7 @@
     <string name="document_title">Title</string>
     <string name="document_content">Content</string>
     <string name="save">Save</string>
-    <string name="export_pdf">Export PDF</string>
+    <string name="export_pdf">Export</string>
     <string name="share">Share</string>
     <string name="copy">Copy</string>
     <string name="document_saved">Document saved</string>
@@ -32,6 +32,39 @@
     <string name="title_required">Title is required</string>
     <string name="error_saving">Error while saving</string>
     <string name="undo">Undo</string>
+    <string name="email_required">Email is required</string>
+    <string name="password_required">Password is required</string>
+    <string name="password_length">Password must be at least 6 characters long</string>
+    <string name="registration_success">Registration successful</string>
+    <string name="logout">Logout</string>
+    <string name="email">email\n</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="register">register</string>
+    <!-- Add these to your strings.xml file -->
+    <string name="receipt_data">Receipt Data</string>
+    <string name="receipt_title">Receipt Title</string>
+    <string name="receipt_items">Receipt Items</string>
+    <string name="export_csv">Export</string>
+    <string name="receipt_saved">Receipt saved</string>
+    <string name="csv_exported">CSV exported</string>
+    <string name="item">Item</string>
+    <string name="price">Price</string>
+    <string name="quantity">Quantity</string>
+    <string name="total">Total</string>
+    <string name="receipt_mode">Receipt mode</string>
+    <string name="add_item">Add Item</string>
+    <string name="delete_item">Delete Item</string>
+    <string name="receipt_viewer">Receipt Viewer</string>
+    <string name="delete_success">Receipt deleted successfully</string>
+    <string name="error_deleting">Error deleting receipt</string>
+    <string name="tab_documents">Documents</string>
+    <string name="tab_receipts">Receipts</string>
+    <string name="scan_document">Scan Document</string>
+    <string name="scan_receipt">Scan Receipt</string>
+    <string name="no_documents">No documents</string>
+    <string name="no_receipts">No receipts</string>
+    <string name="no_receipts_yet">No receipts yet</string>
 
 
 </resources>

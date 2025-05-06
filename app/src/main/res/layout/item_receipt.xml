@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <!-- Thumbnail -->
+    <ImageView
+        android:id="@+id/ivReceiptThumbnail"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Merchant Name -->
+    <TextView
+        android:id="@+id/tvMerchantName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Merchant Name"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/ivReceiptThumbnail"
+        app:layout_constraintTop_toTopOf="@id/ivReceiptThumbnail"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/tvReceiptDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="May 06, 2025 • 19:00"
+        android:textAppearance="?attr/textAppearanceCaption"
+        app:layout_constraintStart_toStartOf="@id/tvMerchantName"
+        app:layout_constraintTop_toBottomOf="@id/tvMerchantName"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Total Amount -->
+    <TextView
+        android:id="@+id/tvTotalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$0.00"
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintStart_toStartOf="@id/tvMerchantName"
+        app:layout_constraintTop_toBottomOf="@id/tvReceiptDate"/>
+
+    <!-- Item Count -->
+    <TextView
+        android:id="@+id/tvItemCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 items"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/tvTotalAmount"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvTotalAmount"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

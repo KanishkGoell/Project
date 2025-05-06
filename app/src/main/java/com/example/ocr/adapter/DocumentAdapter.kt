@@ -1,3 +1,4 @@
+//DocumentAdapter.kt
 package com.application.ocr.adapter
 
 import android.view.LayoutInflater
@@ -24,7 +25,6 @@ class DocumentAdapter(
         )
         return DocumentViewHolder(binding)
     }
-
     override fun onBindViewHolder(holder: DocumentViewHolder, position: Int) {
         holder.bind(getItem(position))
     }

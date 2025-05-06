@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    // ML Kit now ships as an AAR, no extra plugin needed
+    // Add Firebase and Google Services plugins
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -19,7 +20,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true      // required for all the *Binding classes
+        viewBinding = true      // required for all the *Binding classes
     }
 
     compileOptions {
@@ -36,7 +37,7 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.2.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
-    implementation("com.github.yalantis:ucrop:2.2.8")   // <- new
+    implementation("com.github.yalantis:ucrop:2.2.8")
 
     // CameraX
     implementation("androidx.camera:camera-core:1.4.0-beta01")
@@ -44,15 +45,25 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.4.0-beta01")
     implementation("androidx.camera:camera-view:1.4.0-beta01")
 
-    // ML Kit on‑device text recogniser (Latin)
+    // ML Kit on-device text recogniser (Latin)
     implementation("com.google.mlkit:text-recognition:16.0.0")
 
-    // Coil for image loading (or Glide if you prefer)
+    // Coil for image loading
     implementation("io.coil-kt:coil:2.5.0")
 
-    // Lifecycle + coroutines (optional but handy)
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+    // Firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-storage")
 
-    // CardView (for the list items)
+    // Lifecycle + coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation(libs.tess.two)   // Tesseract port
+
+    // CardView
     implementation("androidx.cardview:cardview:1.0.0")
 }

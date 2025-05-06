@@ -1,27 +1,44 @@
 package com.application.ocr.model
 
-import android.net.Uri
+import com.google.firebase.firestore.DocumentId
+import com.google.firebase.firestore.ServerTimestamp
 import java.io.Serializable
 import java.util.Date
 import java.util.UUID
 
-// Document.kt
 data class Document(
+    @DocumentId
     val id: String = UUID.randomUUID().toString(),
-    val title: String,
-    val content: String,
-    val imagePath: String?,
+    val title: String = "",
+    val content: String = "",
+    val imagePath: String? = null,
+    @ServerTimestamp
     val createdAt: Date = Date(),
+    @ServerTimestamp
     val updatedAt: Date = Date(),
-    val order: Int = 0
+    val order: Int = 0,
+    val userId: String = ""  // Assign the user's ID to documents
 ) : Serializable {
-    fun toContentValues(): Map<String, Any> = mapOf(
-        "id" to id,
+    // Empty constructor for Firestore
+    constructor() : this(
+        id = "",
+        title = "",
+        content = "",
+        imagePath = null,
+        createdAt = Date(),
+        updatedAt = Date(),
+        order = 0,
+        userId = ""
+    )
+
+    // Convert to Map for Firestore
+    fun toMap(): Map<String, Any?> = mapOf(
         "title" to title,
         "content" to content,
-        "image_path" to (imagePath ?: ""),
-        "created_at" to createdAt.time,
-        "updated_at" to updatedAt.time,
-        "ord" to order
+        "imagePath" to imagePath,
+        "createdAt" to createdAt,
+        "updatedAt" to updatedAt,
+        "order" to order,
+        "userId" to userId
     )
 }
